@@ -1,0 +1,114 @@
+h1 {
+    font-family: Georgia;
+    font-size: 36px; /* Increase font size for the heading */
+    margin-bottom: 20px; /* Add some spacing below the heading */
+    color: #333; /* Change text color for the heading */
+    text-align: center;
+  }
+  
+  p {
+    font-size: 20px;
+  }
+  
+  #filterDropdown {
+    margin-bottom: 14px;
+    margin-right: 300px;
+  }
+  
+  #container {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .card {
+    min-height: 450px;
+    width: 200px;
+    vertical-align: text-top;
+    background: rgb(15, 14, 14);
+    border-radius: 8px;
+    border: 2px solid rgb(65, 62, 62);
+    box-shadow: 0 2px 4px rgb(230, 230, 229);
+    margin: 10px;
+    color: aliceblue;
+    padding: 10px;
+    text-align: center;
+    overflow: hidden;
+    
+  }
+
+   
+  .card img {
+   
+   
+    max-width: 100%;
+    height: 150px; /* Set a fixed height for the images */
+    object-fit: cover; /* This property ensures images fill the fixed height */
+    margin-top: 10px;
+    border-radius: 4px;
+  }  
+
+  
+  .card p {
+    font-family: Arial;
+  }
+  .card-details {
+    
+    padding: 10px;
+    flex-grow: 1; /* Allow the card details to expand vertically */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+  .card-genre {
+    font-style: italic;
+  }
+
+  .card-rating {
+    color: #ff9900;
+  }
+
+  .card-year {
+    font-weight: bold;
+  }
+
+  .card-description {
+    margin-top: 10px;
+  }
+
+  /* Style the sorting button (button with ID sortByYear) */
+  label {
+    font-weight: bold;
+    font-size: 20px;
+  }
+#sortByYear {
+    
+    background-color: #338bea;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* Style the filter dropdown (select element) */
+#filterDropdown {
+    background-color: #338bea;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  
+ 
+  
+  

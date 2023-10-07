@@ -71,7 +71,7 @@ const books = [
     rating: 4.7,
     description:
       'The first book in the beloved Harry Potter series, it introduces readers to the magical world of Hogwarts and the young wizard Harry Potter.',
-    image: "./books-images/harry-potter-and-the-sorcerer'.jpg"
+    image: './books-images/harry-potter-and-the-sorcerer.jpg'
   },
   {
     title: 'Moby-Dick',
@@ -404,3 +404,102 @@ const recipes = [
     image: './recipe-images/grilled.jpg'
   }
 ]
+
+
+
+// Get references to HTML elements using their IDs.
+const container = document.getElementById("container");
+// const sortByYear = document.getElementById("sortByYear");
+const filterDropdown = document.getElementById("filterDropdown");
+
+// Function to load and display the list of books.
+const loadBooks = (bookArray) => {
+  container.innerHTML = "";
+
+  bookArray.forEach((book) => {
+    container.innerHTML += `
+    <div class="card">
+    <img src="${book.image}" alt="${book.title}" class="card-image">
+    <div class="card-details">
+      <h2 class="card-title">${book.title}</h2>
+      <p class="card-author">${book.author}</p>
+      <p class="card-genre">${book.genre}</p>
+      <p class="card-year">${book.year}</p>
+      <p class="card-rating">${book.rating} Rating</p>
+      <p class="card-description">${book.description}</p>
+    
+    </div>
+      `;
+  });
+};
+// loadBooks(books);
+
+
+// Function to filter and display books based on genre.
+const filterBooks= () => {
+  // Get the selected value from the filter dropdown.
+  const value = filterDropdown.value;
+
+  if (value === "all") {
+    loadBooks(books);
+  } else {
+    // Otherwise, filter books based on genre and load the filtered list.
+    const filteredList = books.filter((book) => book.genre === value);
+
+    loadBooks(filteredList);
+  }
+};
+
+// Function to sort and display books in ascending and descending order.
+// const sortBooks= () => {
+//   // Get the selected value from the sortByYear.
+  
+//   const sortedList = books.sort((a, b) => {
+//       if (order === 'asc') {
+//         return a.year - b.year;
+//       } else if (order === 'desc') {
+//         return b.year - a.year;
+//       }
+
+//     sortBooks(sortedList);
+  
+// });
+// };
+
+// Get a reference to the sort button element by its ID.
+const sortButton = document.getElementById("sortByYear");
+
+// Add an event listener to the sort button.
+sortButton.addEventListener('click', () => {
+  // Get the selected sorting order (ascending or descending).
+  const sortOrder = sortByYear.value;
+
+  // Call the sortBooks function with the selected sorting order.
+  sortBooks(sortOrder);
+});
+
+// Function to sort and display books in ascending and descending order.
+const sortBooks = (order) => {
+  // Clone the original books array to avoid modifying the original.
+  const sortedList = [...books];
+
+  // Sort the cloned array based on the 'year' property.
+  sortedList.sort((a, b) => {
+    if (order === 'asc') {
+      return a.year - b.year;
+    } else if (order === 'desc') {
+      return b.year - a.year;
+    }
+  });
+
+  // Call the loadBooks function with the sorted array to display it.
+  loadBooks(sortedList);
+};
+
+
+
+// Apply the filter when the user changes the dropdown selection.
+filterDropdown.addEventListener("change", filterBooks);
+// sortByYear.addEventListener('click', sortBooks);
+// Load the initial list of books when the page loads.
+loadBooks(books);
