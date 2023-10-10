@@ -10,11 +10,6 @@ h1 {
     font-size: 20px;
   }
   
-  #filterDropdown {
-    margin-bottom: 14px;
-    margin-right: 300px;
-  }
-  
   #container {
     width: 100%;
     justify-content: center;
@@ -106,6 +101,8 @@ h1 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 14px;
+    margin-right: 300px;
   }
   
   
